@@ -1,0 +1,262 @@
+----------------------constructor----------------------------
+
+There are two different types of constructor they are
+
+1.default constructor
+2.parameterised constructor
+--------------------------------practice------------------------------------------
+ class Master{
+        int num=10;
+        int rollnumber=1000;
+
+     public  int setter() {
+         return num;
+     }
+    }
+    class constructor{
+        public static void main(String[] args) {
+            Master cons = new Master();
+            System.out.println(cons.rollnumber);
+            int newnum= cons.setter();
+            System.out.println(newnum);
+        }
+    }
+-------------------------format specifier--------------------------------
+%x or %X: Integer hexadecimal representation.
+%t or %T: Time and date.
+%s or %S: String.
+%n: Inserts a newline character.
+%o: Octal integer.
+%f: Decimal floating-point.
+%e or %E: Scientific notation.
+%g: Uses either %f or %e, whichever is shorter.
+%h or %H: Hash code of the argument.
+%d: Decimal integer.
+%c: Character.
+%b or %B: Boolean.
+%a or %A: Floating-point hexadecimal.
+Additionally, you can use flags and width options to further customize the formatting. For example:
+
+%+d: Adds a plus sign before positive numeric values.
+%(d: Puts negative numeric values inside parentheses.
+% d: Prints a space before positive numbers for
+-----------------------inheritence in java ------------------------
+This is used to access the class features in another class
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+
+--------------------------calender object in java ------------------------------
+public class dayone {
+    public static String day(int year,int month ,int  day){
+        Calendar calendar = new GregorianCalendar(year, month - 1, day);
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        String[] choose ={
+              "SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"
+        };
+
+     return choose[dayOfWeek] ;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int month = sc.nextInt();
+        int day = sc.nextInt();
+        int year = sc.nextInt();
+        sc.close();
+        System.out.println(day(year,month,day));
+
+
+    }
+}
+---------------------♾️string comparison methods---------------------------
+
+comparison methods
+1,equals
+2,equalsignorecase
+3,comapareto
+4,comparetoignorecase
+5,starts with
+6,starts with (prefix, offset)
+7,ends with
+8,contents equals (charsequance)
+9,contentsequals(stringbuffer)
+-------------------------------------------------------------------------
+-----------------------------new--start---------------------------------------
+
+
+thirumpavum oops la irunthu st panuvom
+
+
+
+//--------------------constructor----------------------------
+    class one{
+        int num;
+        String st;
+        one(){
+            num = 12;
+            st = "abiinanth";
+        }
+    }
+    class constructor{
+        public static void main(String[] args) {
+           one constnan =  new one();
+            System.out.println(constnan.num);
+            System.out.println(constnan.st);
+
+        }
+
+
+    }
+    //----------------------encapsulation & abstraction-----------------------------//
+class room1 {
+    int numofstu = 2;
+    int numofcot=4;
+}
+class room2 extends room1{
+    boolean present = true;
+
+}
+class main{
+    public static void main(String[] args) {
+        room2 obj = new room2();
+        System.out.println(obj.numofcot);
+        System.out.println(obj.numofstu);
+        System.out.println(obj.present);
+    }
+}
+//--------------------------------types of inheritance----------------//
+this is nothing just the class which is extended the values in the extended class gets
+changed
+
+this is called the method overriding
+//abstract class and methods      ---------------------//\
+abstract  class one {
+    abstract void sum();
+    void summa(){
+        System.out.println("this is the abstract class which is getting printed ");
+    }
+}
+class two extends  one{
+    void sum(){
+        System.out.println("this is a abstraction method");
+    }
+
+}
+class main{
+    public static void main(String[] args) {
+        two obj = new two();
+        obj.summa();
+        obj.sum();
+    }
+}
+//------------------ interface and multiple inheritence -----------------------
+//interface and extend keyword is called implement
+// and all the method should is an abstract
+
+interface  room {
+    abstract void one();
+    abstract void two();
+
+}
+interface  house {
+    abstract void three();
+    abstract void four();
+
+}
+ class person implements  room,house{
+    public void one(){
+        System.out.println("this is the room number 123");
+    }
+    public void two(){
+        System.out.println("this is the room number 132");
+    }
+    public void three(){
+        System.out.println("this is the opposite room");
+    }
+    public void four(){
+        System.out.println("this is the next room for us ");
+    }
+     public static void main(String[] args) {
+      person obj = new person();
+      obj.one();
+      obj.two();
+      obj.three();
+      obj.four();
+
+     }
+}
+//---------------------static keyword in java -------------------//
+//---------------------static keyword in java -------------------//
+//it is used to use the methods and the velues in a class with out creating a obj anf a constructor
+class main{
+    public static void main(String[] args) {
+          one obj1 = new one();
+        System.out.println(obj1.age);
+           two obj2 = new two();
+           obj2.age=22;
+        System.out.println(obj1.age);
+        System.out.println(obj2.age);
+
+
+    }
+}
+class one {
+    int age = 30;
+    static void print(){
+        System.out.println("this is a static function");
+    }
+}
+class two extends one{
+
+}------------------------------------------------------
+//-------------------------this super key  wrd ----------------------------//
+class one {
+     char gender='m';
+      void print(){
+          System.out.println(gender);
+      }
+}
+class two extends one{
+    char gender='f';
+    void print(){
+        System.out.println(gender);
+
+    }
+
+}
+class main{
+    public static void main(String[] args) {
+      one f = new one();
+      two d = new two();
+      f.print();
+      d.print();
+    }
+}
+//-------------------------this key wrd ----------------------------//
+class one {
+     char gender='m';
+     int age;
+     int num;
+      void print(int ag ,int nu){
+          this.age=ag;
+          this.num=nu;
+          System.out.println("this is the example for the this keyword" +age+num);
+      }
+}
+class two extends one{
+    char gender='f';
+    void print(){
+        System.out.println(gender);
+
+    }
+
+}
+class main{
+    public static void main(String[] args) {
+      one f = new one();
+      two d = new two();
+      f.print(12,22);
+      d.print();
+    }
+}
+// this keyword is mainly used inside the class to access the components inside the class
