@@ -260,10 +260,33 @@ class main{
     }
 }
 // this keyword is mainly used inside the class to access the components inside the class
-// this is a new line of practice code
-
-
-
+// this key word ------------------------------//
+//class one {
+//     char gender='m';
+//     int age;
+//     int num;
+//      void print(int ag ,int nu){
+//          this.age=ag;
+//          this.num=nu;
+//          System.out.println("this is the example for the this keyword" +age+num);
+//      }
+//}
+//class two extends one{
+//    char gender='f';
+//    void print(){
+//        System.out.println(gender);
+//
+//    }
+//
+//}
+//class main{
+//    public static void main(String[] args) {
+//      one f = new one();
+//      two d = new two();
+//      f.print(12,22);
+//      d.print();
+//    }
+//}
 //// this keyword is mainly used inside the class to access the components inside the class
 ----------------------------------scanner-------------------------------------
 class One {
@@ -294,5 +317,44 @@ class two{
         input.close();
         return num;
     }
+
+}
+
+//---------------------------------exception handling ----------------------------//
+import java.util.Scanner;
+class main{
+    public static void main(String[] args) {
+       one f = new one();
+        System.out.println("This is sample program and the input number should be an integer less then hundred");
+       f.check();
+    }
+}
+class one {
+    Scanner p = new Scanner(System.in);
+    void check(){
+        System.out.print("enter a vaid number :");
+        int b =p.nextInt();
+        if (b<=100){
+            try{
+                int a = 10;
+
+                int c = a/b;
+            }
+            catch(Exception E){
+                System.out.println("this is invaild in java");
+            }
+            finally{
+                System.out.println("this is end  your response is been considered");
+            }
+        }
+        else{
+            check();
+            System.out.println("try entering a vaild number ");
+
+        }
+
+
+    }
+
 
 }
