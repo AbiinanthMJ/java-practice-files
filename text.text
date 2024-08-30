@@ -261,3 +261,38 @@ class main{
 }
 // this keyword is mainly used inside the class to access the components inside the class
 // this is a new line of practice code
+
+
+
+//// this keyword is mainly used inside the class to access the components inside the class
+----------------------------------scanner-------------------------------------
+class One {
+    public static void main(String[] args) {
+        // creation  of obj
+      two f = new two();
+      f.fun();
+    }
+}
+class two{
+    public  int  fun(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        if (num > 100) {
+            // checking the int
+            System.out.println("This is invalid.");
+            System.out.println("try again !");
+            fun();
+
+        } else {
+            System.out.println(num + " is the new input number.");
+        }
+
+        // Close the Scanner to avoid resource leaks
+        input.close();
+        return num;
+    }
+
+}
